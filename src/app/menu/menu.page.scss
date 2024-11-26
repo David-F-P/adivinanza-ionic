@@ -4,11 +4,45 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    padding: 20px;
 }
 
-.menu-option {
-    width: 200px;
-    height: 125px;
+ion-card {
+    width: 80%;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+ion-card-header {
+    background: #00bcd4; // Azul brillante
+    color: #fff;
+    border-radius: 10px;
+}
+
+ion-card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ion-card-content {
     text-align: center;
-    align-content: center;
+    padding: 15px;
+}
+
+ion-card[color="primary"] {
+    background: #ff8a00; // Naranja brillante
+}
+
+ion-card[color="warning"] {
+    background: #ffeb3b; // Amarillo brillante
+}
+
+ion-card[color="dark"] {
+    background: #424242; // Gris oscuro para "Salir"
+}
+
+ion-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }

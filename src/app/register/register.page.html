@@ -2,30 +2,76 @@
   <div class="register-container">
     <ion-card mode="ios">
       <ion-card-header class="ion-text-center">
-        <ion-card-title>Registrate</ion-card-title>
-        <ion-card-subtitle>Adivina el numero</ion-card-subtitle>
+        <ion-card-title>Regístrate</ion-card-title>
+        <ion-card-subtitle>Adivina el número</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <form #frmRegistro="ngForm">
           <!-- Campo de Usuario -->
           <ion-item>
             <ion-label position="floating">Usuario</ion-label>
-            <ion-input [(ngModel)]="usuario" type="text" name="username" required></ion-input>
+            <ion-input
+              [(ngModel)]="usuario"
+              type="text"
+              name="username"
+              required
+              minlength="3">
+            </ion-input>
           </ion-item>
+          <ion-text color="danger" *ngIf="errorUsuario">
+            {{ errorUsuario }}
+          </ion-text>
+
           <!-- Campo de Correo -->
           <ion-item>
             <ion-label position="floating">Correo</ion-label>
-            <ion-input [(ngModel)]="correo" type="email" name="email" required></ion-input>
+            <ion-input
+              [(ngModel)]="correo"
+              type="email"
+              name="email"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}">
+            </ion-input>
           </ion-item>
+          <ion-text color="danger" *ngIf="errorCorreo">
+            {{ errorCorreo }}
+          </ion-text>
+
           <!-- Campo de Contraseña -->
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input>
+            <ion-input
+              [(ngModel)]="password"
+              type="password"
+              name="password"
+              required
+              minlength="6">
+            </ion-input>
           </ion-item>
+          <ion-text color="danger" *ngIf="errorPassword">
+            {{ errorPassword }}
+          </ion-text>
+
           <br />
           <!-- Botón de Registro -->
-          <ion-button (click)="onClickRegistrar(frmRegistro)" expand="block" color="primary">Registrarse</ion-button>
+          <ion-button
+            (click)="onClickRegistrar(frmRegistro)"
+            expand="block"
+            color="primary">
+            Registrarse
+          </ion-button>
+
+          <!-- Mensaje de éxito -->
+          <ion-text color="success" *ngIf="mensajeExito">
+            {{ mensajeExito }}
+          </ion-text>
+
+          <!-- Mensaje de error general -->
+          <ion-text color="danger" *ngIf="generalError">
+            {{ generalError }}
+          </ion-text>
         </form>
+
         <!-- Enlace para iniciar sesión -->
         <div class="login-link">
           <ion-label>

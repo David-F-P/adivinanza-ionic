@@ -3,23 +3,49 @@
     <ion-card mode="ios">
       <ion-card-header class="ion-text-center">
         <ion-card-title>Bienvenido</ion-card-title>
-        <ion-card-subtitle>Adivina el numero</ion-card-subtitle>
+        <ion-card-subtitle>Adivina el número</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <form #frmLogin="ngForm">
+        <form #frmLogin="ngForm" (ngSubmit)="onClickIngresar(frmLogin)">
           <!-- Campo de Usuario -->
           <ion-item>
             <ion-label position="floating">Usuario</ion-label>
-            <ion-input [(ngModel)]="usuario" type="text" name="username" required></ion-input>
+            <ion-input 
+              [(ngModel)]="usuario" 
+              type="text" 
+              name="username" 
+              required>
+            </ion-input>
           </ion-item>
+          <ion-note *ngIf="showError && !usuario" color="danger">
+            El campo Usuario es obligatorio.
+          </ion-note>
+
           <!-- Campo de Contraseña -->
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input>
+            <ion-input 
+              [(ngModel)]="password" 
+              type="password" 
+              name="password" 
+              required>
+            </ion-input>
           </ion-item>
+          <ion-note *ngIf="showError && !password" color="danger">
+            El campo Contraseña es obligatorio.
+          </ion-note>
+
           <br />
+
           <!-- Botón de Ingresar -->
-          <ion-button (click)="onClickIngresar(frmLogin)" expand="block" color="primary">Ingresar</ion-button>
+          <ion-button expand="block" color="primary" type="submit">
+            Ingresar
+          </ion-button>
+
+          <!-- Mensaje de credenciales incorrectas -->
+          <ion-note *ngIf="errorMessage" color="danger" class="ion-text-center">
+            {{ errorMessage }}
+          </ion-note>
         </form>
 
         <!-- Enlace para registrarse -->

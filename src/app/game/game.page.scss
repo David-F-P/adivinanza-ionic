@@ -1,0 +1,72 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+ion-card {
+    width: 90%;
+    margin: 10px;
+    background: linear-gradient(135deg, #ff8a00, #ff5c00); // Gradiente vibrante
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+ion-card-header {
+    background: #ff5c00;
+    color: #fff;
+    border-radius: 10px;
+}
+
+ion-card-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+ion-card-content {
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+}
+
+ion-button {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+ion-button[color="primary"] {
+    background-color: #ff6f00;
+    font-weight: bold;
+}
+
+ion-button[color="medium"] {
+    background-color: #757575;
+    font-weight: bold;
+}
+
+ion-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+ion-input {
+    border-radius: 10px;
+}
+
+.ion-text-danger {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}

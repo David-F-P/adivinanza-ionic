@@ -1,0 +1,67 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+ion-card {
+    width: 90%;
+    background: linear-gradient(135deg, #ff4081, #f50057); // Rosa vibrante
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+ion-card-header {
+    background: #f50057;
+    color: #fff;
+    border-radius: 10px;
+}
+
+ion-card-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+ion-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+ion-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+ion-input {
+    border-radius: 10px;
+}
+
+ion-button {
+    margin: 15px 0;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+ion-button[color="primary"] {
+    background-color: #ff6f00;
+}
+
+ion-label a {
+    color: #c5e1a5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ion-label a:hover {
+    text-decoration: underline;
+}
+
+.ion-text-danger {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 10px;
+}
